@@ -5,7 +5,13 @@
 
 trigger:
 - master
-
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'MAIC - Tek Experts COS - PaaSApps TL (8a92e029-1994-415b-8894-e0bb212035b6)-1721'
+    appType: 'webApp'
+    appName: 'testdevopsdsf'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
 pool:
   vmImage: ubuntu-latest
 
